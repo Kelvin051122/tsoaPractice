@@ -18,7 +18,7 @@
 		"contact": {}
 	},
 	"paths": {
-		"/{Photoid}": {
+		"/get/{Photoid}": {
 			"get": {
 				"operationId": "GetUser",
 				"responses": {
@@ -93,7 +93,7 @@
 				]
 			}
 		},
-		"/": {
+		"/post": {
 			"post": {
 				"operationId": "CreateUser",
 				"responses": {

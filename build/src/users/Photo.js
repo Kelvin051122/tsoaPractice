@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Photo = void 0;
 const typeorm_1 = require("typeorm");
-const inversify_1 = require("inversify");
 let Photo = class Photo {
 };
 exports.Photo = Photo;
@@ -28,7 +27,6 @@ __decorate([
     __metadata("design:type", Number)
 ], Photo.prototype, "age", void 0);
 exports.Photo = Photo = __decorate([
-    (0, inversify_1.injectable)(),
     (0, typeorm_1.Entity)()
 ], Photo);
 //# sourceMappingURL=Photo.js.map

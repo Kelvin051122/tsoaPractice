@@ -16,7 +16,6 @@ exports.RegisterRoutes = RegisterRoutes;
 const runtime_1 = require("@tsoa/runtime");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const usersController_1 = require("./../src/users/usersController");
-const ioc_1 = require("./../src/ioc");
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 const models = {};
 const templateService = new runtime_1.ExpressTemplateService(models, { "noImplicitAdditionalProperties": "throw-on-extras", "bodyCoercion": true });
@@ -26,7 +25,7 @@ function RegisterRoutes(app) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
-    app.get('/:Photoid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.getUser)), function UsersController_getUser(request, response, next) {
+    app.get('/get/:Photoid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.getUser)), function UsersController_getUser(request, response, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const args = {
                 Photoid: { "in": "path", "name": "Photoid", "required": true, "dataType": "double" },
@@ -35,11 +34,7 @@ function RegisterRoutes(app) {
             let validatedArgs = [];
             try {
                 validatedArgs = templateService.getValidatedArgs({ args, request, response });
-                const container = typeof ioc_1.iocContainer === 'function' ? ioc_1.iocContainer(request) : ioc_1.iocContainer;
-                const controller = yield container.get(usersController_1.UsersController);
-                if (typeof controller['setStatus'] === 'function') {
-                    controller.setStatus(undefined);
-                }
+                const controller = new usersController_1.UsersController();
                 yield templateService.apiHandler({
                     methodName: 'getUser',
                     controller,
@@ -64,11 +59,7 @@ function RegisterRoutes(app) {
             let validatedArgs = [];
             try {
                 validatedArgs = templateService.getValidatedArgs({ args, request, response });
-                const container = typeof ioc_1.iocContainer === 'function' ? ioc_1.iocContainer(request) : ioc_1.iocContainer;
-                const controller = yield container.get(usersController_1.UsersController);
-                if (typeof controller['setStatus'] === 'function') {
-                    controller.setStatus(undefined);
-                }
+                const controller = new usersController_1.UsersController();
                 yield templateService.apiHandler({
                     methodName: 'delete',
                     controller,
@@ -84,7 +75,7 @@ function RegisterRoutes(app) {
         });
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.post('/', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.createUser)), function UsersController_createUser(request, response, next) {
+    app.post('/post', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.createUser)), function UsersController_createUser(request, response, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const args = {
                 requestBody: { "in": "body", "name": "requestBody", "required": true, "dataType": "any" },
@@ -93,11 +84,7 @@ function RegisterRoutes(app) {
             let validatedArgs = [];
             try {
                 validatedArgs = templateService.getValidatedArgs({ args, request, response });
-                const container = typeof ioc_1.iocContainer === 'function' ? ioc_1.iocContainer(request) : ioc_1.iocContainer;
-                const controller = yield container.get(usersController_1.UsersController);
-                if (typeof controller['setStatus'] === 'function') {
-                    controller.setStatus(undefined);
-                }
+                const controller = new usersController_1.UsersController();
                 yield templateService.apiHandler({
                     methodName: 'createUser',
                     controller,
@@ -123,11 +110,7 @@ function RegisterRoutes(app) {
             let validatedArgs = [];
             try {
                 validatedArgs = templateService.getValidatedArgs({ args, request, response });
-                const container = typeof ioc_1.iocContainer === 'function' ? ioc_1.iocContainer(request) : ioc_1.iocContainer;
-                const controller = yield container.get(usersController_1.UsersController);
-                if (typeof controller['setStatus'] === 'function') {
-                    controller.setStatus(undefined);
-                }
+                const controller = new usersController_1.UsersController();
                 yield templateService.apiHandler({
                     methodName: 'updateUser',
                     controller,

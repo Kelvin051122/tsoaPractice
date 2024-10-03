@@ -111,7 +111,7 @@ __decorate([
         name: "Moly",
         age: 77
     }),
-    (0, tsoa_1.Get)('{Photoid}'),
+    (0, tsoa_1.Get)('/get/{Photoid}'),
     __param(0, (0, tsoa_1.Path)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -128,7 +128,7 @@ __decorate([
 __decorate([
     (0, tsoa_1.SuccessResponse)("201", "Created") // Custom success response
     ,
-    (0, tsoa_1.Post)(),
+    (0, tsoa_1.Post)('/post'),
     __param(0, (0, tsoa_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
