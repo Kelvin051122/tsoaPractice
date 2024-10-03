@@ -31,7 +31,7 @@ import {
         name: "Moly",
         age: 77
     })
-    @Get('{Photoid}')
+    @Get('/get/{Photoid}')
     public async getUser(@Path() Photoid:number) {
         try{
             const firstPhoto = await photoRepository.findOneBy({
@@ -71,7 +71,7 @@ import {
    * }
    */
     @SuccessResponse("201", "Created") // Custom success response
-    @Post()
+    @Post('/post')
     public async createUser(
       @Body() requestBody:any
     ): Promise<void> {
