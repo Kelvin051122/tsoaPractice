@@ -1,0 +1,194 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "ts_practice",
+		"version": "1.0.0",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/{Photoid}": {
+			"get": {
+				"operationId": "GetUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": 0,
+											"name": "tsoa user",
+											"age": 26
+										}
+									},
+									"Example 2": {
+										"value": {
+											"id": 2,
+											"name": "Moly",
+											"age": 77
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"description": "Retrieves the details of an existing user.\r\nSupply the unique user ID from either and receive corresponding user details.",
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "Photoid",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/delete/{Photoid}": {
+			"delete": {
+				"operationId": "Delete",
+				"responses": {
+					"201": {
+						"description": "Removed",
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": false,
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"description": "Retrieves the details of an existing user.\r\nSupply the unique user ID from either and receive corresponding user details.",
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "Photoid",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/": {
+			"post": {
+				"operationId": "CreateUser",
+				"responses": {
+					"201": {
+						"description": "Created"
+					}
+				},
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "Description for the request body object",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"description": "Description for the request body object"
+							},
+							"examples": {
+								"Example 1": {
+									"value": {
+										"name": "BTP-CLOSURE-4-NE",
+										"age": 15
+									}
+								},
+								"Example 2": {
+									"value": {
+										"name": "MollyCharles",
+										"age": 26
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/update/{Photoid}": {
+			"put": {
+				"operationId": "UpdateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"additionalProperties": false,
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "Photoid",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "Description for the request body object",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"description": "Description for the request body object"
+							},
+							"examples": {
+								"Example 1": {
+									"value": {
+										"name": "BTP-CLOSURE-4-NE",
+										"age": 15
+									}
+								},
+								"Example 2": {
+									"value": {
+										"name": "MollyCharles",
+										"age": 26
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

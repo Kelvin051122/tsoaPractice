@@ -1,0 +1,51 @@
+{ 
+  "ts-node": {
+        "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    /* Basic Options */
+    "resolveJsonModule": true,
+    "lib": [
+         "es5",
+         "es6"
+      ],
+    "baseUrl": ".",
+    "paths": {
+            "@src/*": ["src/*"],
+            "@users/*": ["src/users/*"],
+            "@build/*":["build/*"]
+    },
+    "incremental": true,
+    "target": "es6",
+    "module": "CommonJS",
+    "outDir": "build",
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata" :true,
+    // emitDecoratorMetadata is not needed by tsoa (unless you are using Custom Middlewares)
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true
+  }
+}

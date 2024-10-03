@@ -1,0 +1,43 @@
+{
+  "name": "ts_practice",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "build/src/server.js",
+  "license": "MIT",
+  "_moduleAliases": {
+    "@src": "build/src",
+    "@users": "build/src/users",
+    "@build": "build"
+  },
+  "dependencies": {
+    "@types/es6-shim": "^0.31.45",
+    "esrun": "^3.2.26",
+    "express": "^4.21.0",
+    "inversify": "^6.0.2",
+    "inversify-binding-decorators": "^4.0.0",
+    "module-alias": "^2.2.3",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "swagger-ui-express": "^5.0.1",
+    "tsoa": "^6.4.0",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.3",
+    "@types/swagger-ui-express": "^4.1.6",
+    "concurrently": "^9.0.1",
+    "madge": "^8.0.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "build": "tsoa spec-and-routes && tsc",
+    "start": "node build/src/server.js",
+    "start2": "ts-node src/index.ts",
+    "check": "madge build/src/users/usersController.js"
+  }
+}
