@@ -31,11 +31,11 @@ import {
         name: "Moly",
         age: 77
     })
-    @Get('/get/{Photoid}')
-    public async getUser(@Path() Photoid:number) {
+    @Get('/get/{userid}')
+    public async getUser(@Path() userid:number) {
         try{
             const firstPhoto = await photoRepository.findOneBy({
-                id: Photoid,
+                id: userid,
             })
             console.log("First photo from the db: ", firstPhoto)
             return firstPhoto
@@ -51,12 +51,12 @@ import {
    * Supply the unique user ID from either and receive corresponding user details.
    */
     @SuccessResponse("201", "Removed")
-    @Delete('/delete/{Photoid}')
-    public async delete(@Path() Photoid:number):Promise<object>{
+    @Delete('/delete/{userid}')
+    public async delete(@Path() userid:number):Promise<object>{
         const photoToRemove:any = await photoRepository.findOneBy({
-            id: Photoid
+            id: userid
         })
-        await photoRepository.delete(Photoid)
+        await photoRepository.delete(userid)
         return {"message":"OK"}
     }
     /**
@@ -94,9 +94,9 @@ import {
    *   "age": 26
    * }
    */
-    @Put('/update/{Photoid}')
-    public async updateUser(@Body() requestBody:any,@Path() Photoid:number):Promise<object>{
-        await photoRepository.update(Photoid,requestBody)
+    @Put('/update/{userid}')
+    public async updateUser(@Body() requestBody:any,@Path() userid:number):Promise<object>{
+        await photoRepository.update(userid,requestBody)
         return {"message":"OK"}
     }
   }

@@ -32,11 +32,11 @@ let UsersController = class UsersController extends tsoa_1.Controller {
    * Retrieves the details of an existing user.
    * Supply the unique user ID from either and receive corresponding user details.
    */
-    getUser(Photoid) {
+    getUser(userid) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const firstPhoto = yield photoRepository.findOneBy({
-                    id: Photoid,
+                    id: userid,
                 });
                 console.log("First photo from the db: ", firstPhoto);
                 return firstPhoto;
@@ -51,12 +51,12 @@ let UsersController = class UsersController extends tsoa_1.Controller {
    * Retrieves the details of an existing user.
    * Supply the unique user ID from either and receive corresponding user details.
    */
-    delete(Photoid) {
+    delete(userid) {
         return __awaiter(this, void 0, void 0, function* () {
             const photoToRemove = yield photoRepository.findOneBy({
-                id: Photoid
+                id: userid
             });
-            yield photoRepository.delete(Photoid);
+            yield photoRepository.delete(userid);
             return { "message": "OK" };
         });
     }
@@ -92,9 +92,9 @@ let UsersController = class UsersController extends tsoa_1.Controller {
    *   "age": 26
    * }
    */
-    updateUser(requestBody, Photoid) {
+    updateUser(requestBody, userid) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield photoRepository.update(Photoid, requestBody);
+            yield photoRepository.update(userid, requestBody);
             return { "message": "OK" };
         });
     }
@@ -111,7 +111,7 @@ __decorate([
         name: "Moly",
         age: 77
     }),
-    (0, tsoa_1.Get)('/get/{Photoid}'),
+    (0, tsoa_1.Get)('/get/{userid}'),
     __param(0, (0, tsoa_1.Path)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -119,7 +119,7 @@ __decorate([
 ], UsersController.prototype, "getUser", null);
 __decorate([
     (0, tsoa_1.SuccessResponse)("201", "Removed"),
-    (0, tsoa_1.Delete)('/delete/{Photoid}'),
+    (0, tsoa_1.Delete)('/delete/{userid}'),
     __param(0, (0, tsoa_1.Path)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -135,7 +135,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "createUser", null);
 __decorate([
-    (0, tsoa_1.Put)('/update/{Photoid}'),
+    (0, tsoa_1.Put)('/update/{userid}'),
     __param(0, (0, tsoa_1.Body)()),
     __param(1, (0, tsoa_1.Path)()),
     __metadata("design:type", Function),

@@ -25,10 +25,10 @@ function RegisterRoutes(app) {
     //  NOTE: If you do not see routes for all of your controllers in this file, then you might not have informed tsoa of where to look
     //      Please look into the "controllerPathGlobs" config option described in the readme: https://github.com/lukeautry/tsoa
     // ###########################################################################################################
-    app.get('/get/:Photoid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.getUser)), function UsersController_getUser(request, response, next) {
+    app.get('/get/:userid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.getUser)), function UsersController_getUser(request, response, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const args = {
-                Photoid: { "in": "path", "name": "Photoid", "required": true, "dataType": "double" },
+                userid: { "in": "path", "name": "userid", "required": true, "dataType": "double" },
             };
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
             let validatedArgs = [];
@@ -50,10 +50,10 @@ function RegisterRoutes(app) {
         });
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.delete('/delete/:Photoid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.delete)), function UsersController_delete(request, response, next) {
+    app.delete('/delete/:userid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.delete)), function UsersController_delete(request, response, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const args = {
-                Photoid: { "in": "path", "name": "Photoid", "required": true, "dataType": "double" },
+                userid: { "in": "path", "name": "userid", "required": true, "dataType": "double" },
             };
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
             let validatedArgs = [];
@@ -100,11 +100,11 @@ function RegisterRoutes(app) {
         });
     });
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-    app.put('/update/:Photoid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.updateUser)), function UsersController_updateUser(request, response, next) {
+    app.put('/update/:userid', ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController)), ...((0, runtime_1.fetchMiddlewares)(usersController_1.UsersController.prototype.updateUser)), function UsersController_updateUser(request, response, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const args = {
                 requestBody: { "in": "body", "name": "requestBody", "required": true, "dataType": "any" },
-                Photoid: { "in": "path", "name": "Photoid", "required": true, "dataType": "double" },
+                userid: { "in": "path", "name": "userid", "required": true, "dataType": "double" },
             };
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
             let validatedArgs = [];

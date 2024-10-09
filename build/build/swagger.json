@@ -18,7 +18,7 @@
         "contact": {}
     },
     "paths": {
-        "/get/{Photoid}": {
+        "/get/{userid}": {
             "get": {
                 "operationId": "GetUser",
                 "responses": {
@@ -52,7 +52,7 @@
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "Photoid",
+                        "name": "userid",
                         "required": true,
                         "schema": {
                             "format": "double",
@@ -62,7 +62,7 @@
                 ]
             }
         },
-        "/delete/{Photoid}": {
+        "/delete/{userid}": {
             "delete": {
                 "operationId": "Delete",
                 "responses": {
@@ -83,7 +83,7 @@
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "Photoid",
+                        "name": "userid",
                         "required": true,
                         "schema": {
                             "format": "double",
@@ -130,7 +130,7 @@
                 }
             }
         },
-        "/update/{Photoid}": {
+        "/update/{userid}": {
             "put": {
                 "operationId": "UpdateUser",
                 "responses": {
@@ -150,7 +150,7 @@
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "Photoid",
+                        "name": "userid",
                         "required": true,
                         "schema": {
                             "format": "double",
